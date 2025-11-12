@@ -1,0 +1,579 @@
+/* === BASE === */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3 {
+  margin: 0 0 1rem;
+}
+
+#text1, #text2 {
+  font-size: medium;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+#text3, #text4, #text5 {
+  font-size: small;
+  line-height: 1.5;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.btn {
+  background-color: #e3342f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0.5rem 0.5rem 0 0;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #cc1f1a;
+}
+
+/* === HEADER AVEC SÉPARATION OBLIQUE === */
+.header-wrapper {
+  z-index: auto;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header-left, .header-right {
+  width: 50%;
+  height: 90%;
+  position: relative;
+}
+
+.header-left {
+  background: url('/images/image 3.jpg') center/cover no-repeat;
+  clip-path: polygon(0 0, 94% 0, 100% 100%, 0% 100%);
+}
+
+.header-right {
+  background-color: #f3f3f3;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #1e3a8a, transparent);
+}
+
+.logo {
+  width: 120px;         /* ← adapte cette valeur selon ta maquette */
+  height: auto;
+  max-height: 100px;     /* ← limite la hauteur si besoin */
+  object-fit: contain;
+  display: block;
+  margin-bottom: 1rem;  /* espacement sous le logo */
+
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 3rem;
+  color: white;
+}
+
+.custom-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.custom-slider .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.custom-slider .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+.header-buttons {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* === APPROCHE === */
+.approach-section {
+  z-index: auto;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.approach-image-wrapper {
+  flex: 1 1 45%;
+  position: relative;
+  z-index: auto;
+}
+
+.approach-image {
+  z-index: auto;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.approach-image img {
+  border-radius: 1rem;
+  z-index: auto;
+}
+
+/* Coins rouges */
+.corner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  border-top-right-radius: 1rem;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 1rem;
+}
+
+.approach-text {
+  flex: 1 1 45%;
+  padding: 1rem;
+}
+
+
+
+/* === PILIERS === */
+.pillars-section {
+  background:   linear-gradient(to bottom right, #1e3a8a,#4978f8c4, transparent),
+    url('/images/image 1.jpg') center/cover no-repeat;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pillars-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.pillar-box {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex: 1 1 250px;
+  max-width: 150px;
+  max-height: 300px;
+}
+
+.pillar-number {
+  width: 48px;
+  height: 48px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-weight: bold;
+}
+
+/* === RÉSEAUX SOCIAUX === */
+.social-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.social-section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.social-follow {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.social-icons a img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+}
+
+/* === ÉQUIPE + NEWSLETTER === */
+.team-newsletter-section {
+   background:   linear-gradient(to bottom, #085696e6, transparent),
+    url('/images/image 7.jpg') center/cover no-repeat;
+  color: white;
+  padding: 4rem 2rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-column {
+  flex: 1 1 45%;
+}
+
+.newsletter-form input {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  background-color: #e3342f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+/* === FOOTER === */
+.footer-section {
+  background-color: #f3f4f6;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-title {
+  background-color: red;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footer-logos img {
+  height: 68px;
+}
+
+/* === MODAL CLIENT-FORM === */
+.modal-overlay {
+  display: none; /* ← essentiel pour qu’il soit masqué au départ */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999999; /* ← très élevé pour passer devant tout */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+
+.modal-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-box select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff;
+  appearance: none; /* Pour un style uniforme sur tous les navigateurs */
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-box h2 {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modal-box input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.modal-box .btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #e3342f;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-box .btn:hover {
+  background-color: #cc1f1a;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/* === MODAL DISCUTER POPUP === */
+
+.chat-logos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.chat-logo img {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.chat-logo:hover img {
+  transform: scale(1.1);
+}
+
+
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .modal-box {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .modal-box h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-box input,
+  .modal-box .btn {
+    font-size: 0.95rem;
+  }
+
+  .close-btn {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+
+
+/* === RESPONSIVE === */
+@media screen and (max-width: 1024px) {
+  .header-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header-left, .header-right {
+    width: 100%;
+    height: auto;
+    clip-path: none;
+  }
+
+  .header-buttons {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    width: clamp(100px, 12vw, 160px); /* min 100px, max 160px, adaptatif */
+    height: auto;
+  }
+
+
+  .team-newsletter-section {
+    flex-direction: column;
+  }
+
+  .team-column {
+    width: 100%;
+  }
+
+  .pillars-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pillar-box {
+    width: 90%;
+    max-width: none;
+    max-height: none;
+  }
+
+  .approach-section {
+    flex-direction: column;
+  }
+
+  .approach-image-wrapper,
+  .approach-text {
+    width: 100%;
+  }
+
+  .footer-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    width: 80px;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .pillar-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .modal-box {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .modal-box h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-box input,
+  .modal-box .btn {
+    font-size: 0.95rem;
+  }
+
+  .close-btn {
+    font-size: 1.2rem;
+  }
+}
