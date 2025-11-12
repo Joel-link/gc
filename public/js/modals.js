@@ -52,3 +52,74 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+/*----------------- modal dservice -----------------*/
+
+
+let currentSlide = 0;
+
+function openServicesPopup() {
+  document.getElementById('servicesPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  updateSlider();
+}
+
+function closeServicesPopup() {
+  document.getElementById('servicesPopup').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function nextSlide() {
+  const slides = document.querySelectorAll('.slide1');
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateSlider();
+}
+
+function prevSlide() {
+  const slides = document.querySelectorAll('.slide1');
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateSlider();
+}
+
+function updateSlider() {
+  const track = document.querySelector('.slider-track1');
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+/*------------- à propos de nous -----------------*/
+
+
+function openAboutPopup() {
+  document.getElementById('aboutPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAboutPopup() {
+  document.getElementById('aboutPopup').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+/*------------ nos cibles ----------------*/
+
+function openCiblesPopup() {
+  document.getElementById('ciblesPopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCiblesPopup() {
+  document.getElementById('ciblesPopup').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+/*------------- notre équipe -------------*/
+
+function openEquipePopup() {
+  document.getElementById('equipePopup').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEquipePopup() {
+  document.getElementById('equipePopup').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+

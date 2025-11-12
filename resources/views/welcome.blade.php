@@ -12,6 +12,61 @@
 <script src="{{ asset('js/slider.js') }}"></script>
 <script src="{{ asset('js/modals.js') }}"></script>
 
+<!-- Popup Services Slider -->
+<div id="servicesPopup" class="popup-overlay" style="display: none;">
+  <div class="popup-content slider-layout">
+    <span class="close-btn" onclick="closeServicesPopup()">×</span>
+    <div class="slider-wrapper1">
+      <div class="slider-track1">
+        <div class="slide1">
+          <img src="{{ asset('images/plan1.png') }}" alt="Gestion du Contentieux">
+        </div>
+        <div class="slide1">
+          <img src="{{ asset('images/plan2.png') }}" alt="Développement d'Entreprises">
+        </div>
+      </div>
+      <button class="slider-btn prev1" onclick="prevSlide()">‹</button>
+      <button class="slider-btn next1" onclick="nextSlide()">›</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Popup A propos de nous -->
+
+<div id="aboutPopup" class="popup-overlay" style="display: none;">
+  <div class="popup-content about-layout">
+    <span class="close-btn" onclick="closeAboutPopup()">×</span>
+    <div class="about-image-wrapper">
+      <img src="{{ asset('images/propos_nous.png') }}" alt="À propos de nous">
+    </div>
+  </div>
+</div>
+
+<!-- Popup Nos cibles -->
+
+<div id="ciblesPopup" class="popup-overlay" style="display: none;">
+  <div class="popup-content cibles-layout">
+    <span class="close-btn" onclick="closeCiblesPopup()">×</span>
+    <div class="cibles-image-wrapper">
+      <img src="{{ asset('images/nos_cibles.png') }}" alt="Nos cibles">
+    </div>
+  </div>
+</div>
+
+<!-- Popup Notre équipe -->
+
+<div id="equipePopup" class="popup-overlay" style="display: none;">
+  <div class="popup-content equipe-layout">
+    <span class="close-btn" onclick="closeEquipePopup()">×</span>
+    <div class="equipe-image-wrapper">
+      <img src="{{ asset('images/team.jpg') }}" alt="Notre équipe">
+    </div>
+  </div>
+</div>
+
+
+
 <body>
 
 <!-- 🔹 Partie 1 : Header -->
@@ -20,11 +75,11 @@
         <div class="overlay"></div>
         <div class="content">
             <img src="/images/logo gn blanc-06.png" class="logo" >
-            <h1>Génie Consultant</h1>
+            <h1 style="font-family: 'Times New Roman'">Génie Consultant</h1>
             <p id="text1">est un bureau d’études juridiques et d’affaires dont le métier consiste à accompagner les institutions, les entreprises et les particuliers dans le conseil, l’audit et la veille juridique et la gestion de contentieux.
                 
             </p>
-            <a href="#apropos" class="btn">À propos de nous</a>
+            <a href="#apropos" class="btn" onclick="openAboutPopup()">À propos de nous</a>
         </div>
     </div>
 
@@ -38,7 +93,7 @@
     </div>
 
     <div class="header-buttons">
-        <a href="#services" class="btn">Nos services</a>
+        <a href="#services" class="btn" onclick="openServicesPopup()">Nos services</a>
         <a href="#" class="btn" id="openClientForm">Devenir client</a>
 
         <a href="#" class="btn" id="openChatOptions">Discuter</a>
@@ -63,8 +118,7 @@
             Notre proposition de valeur part d’une observation active de l’écosystème des affaires au Gabon, et dont l’analyse situationnelle montre que la fonction juridique dans une chaine de valeur n’est pas suffisament utilisée par de nombreuses entreprises en tant qu’outil de gestion et instrument de contrôle dans leurs processus et cycles d’exploitation ou d’investissement.
         </p>
         <div class="approach-buttons">
-            <a href="#cibles" class="btn">Nos cibles</a>
-            <a href="#objectifs" class="btn">Nos objectifs</a>
+            <a href="#cibles" class="btn" onclick="openCiblesPopup()">Nos cibles</a>
         </div>
     </div>
 </section>
@@ -73,7 +127,7 @@
 <!-- 🔹 Partie 3 : Nos piliers -->
 <section class="pillars-section">
   <div class="degradé"></div>
-    <h2>Nos Piliers</h2>
+    <h2 style="margin-bottom: 4%">Nos Piliers</h2>
     <div class="pillars-grid">
         <div class="pillar-box">
             <div class="pillar-number">1</div>
@@ -112,13 +166,18 @@
 <!-- 🔹 Partie 5 : Équipe et Newsletter -->
 <section class="team-newsletter-section">
     <div class="team-column">
-        <h3>Notre équipe</h3>
-        <p>Découvrez les experts qui vous accompagnent.</p>
-        <a href="#equipe" class="btn">Découvrir</a>
+        <div class="equipe">
+            <h3>Notre équipe</h3>
+            <p>Découvrez les experts qui vous accompagnent.</p>
+            <a href="#" class="btn" onclick="openEquipePopup()">Découvrir</a>
+        </div>
 
-        <h3>Nos locaux</h3>
-        <p>Visitez nos bureaux et espaces de travail.</p>
-        <a href="#locaux" class="btn">Découvrir</a>
+        <div class="locaux">
+            <h3>Nos locaux</h3>
+            <p>Visitez nos bureaux et espaces de travail.</p>
+            <a href="#locaux" class="btn" >Découvrir</a>
+        </div>
+
     </div>
     <div class="team-column">
         <h3>Newsletter</h3>
