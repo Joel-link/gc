@@ -73,29 +73,15 @@
 <section class="header-wrapper">
     <div class="header-left">
         <div class="overlay"></div>
-        <div class="content">
-            <img src="/images/logo gn blanc-06.png" class="logo" >
-            <h1 style="font-family: 'Times New Roman'">Génie Consultant</h1>
-            <p id="text1">est un bureau d’études juridiques et d’affaires dont le métier consiste à accompagner les institutions, les entreprises et les particuliers dans le conseil, l’audit et la veille juridique et la gestion de contentieux.
-                
-            </p>
-            <a href="#apropos" class="btn" onclick="openAboutPopup()">À propos de nous</a>
+        <div class="highlight-banner">
+          <img src="{{ asset('images/banner_gc.jpg') }}" alt="Maître Gilles Lepebe - Génie Consultant">
         </div>
     </div>
 
-    <div class="header-right">
-        <div class="custom-slider">
-        <img src="/images/image 4.jpg" class="slide active" alt="Slide 1">
-        <img src="/images/image 5.jpg" class="slide" alt="Slide 2">
-        <img src="/images/image 6.jpg" class="slide" alt="Slide 3">
-      </div>
-
-    </div>
-
     <div class="header-buttons">
+        <a href="#apropos" class="btn" onclick="openAboutPopup()">À propos de nous</a>
         <a href="#services" class="btn" onclick="openServicesPopup()">Nos services</a>
         <a href="#" class="btn" id="openClientForm">Devenir client</a>
-
         <a href="#" class="btn" id="openChatOptions">Discuter</a>
     </div>
 </section>
@@ -191,7 +177,7 @@
 
 <!-- 🔹 Partie 6 : Footer -->
 <footer class="footer-section">
-    <h2 class="footer-title">Ils nous font confiance</h2>
+    <h2 class="footer-title">Ils nous ont fait confiance</h2>
     <div class="footer-logos">
         <img src="{{ asset('images/partenaire hbr.jpg') }}">
         <img src="{{ asset('images/partenaire dgel.jpg') }}">
@@ -203,6 +189,7 @@
         <img src="{{ asset('images/partenaire republique.jpg') }}">
         <img src="{{ asset('images/partenaire sem.jpg') }}">
         <img src="{{ asset('images/partenaire.jpg') }}">
+        <img src="{{ asset('images/BOA.jpg')}}" alt="">
     </div>
 </footer>
 

@@ -124,6 +124,7 @@ p {
 .slider-btn.prev1 { left: 10px; }
 .slider-btn.next1 { right: 10px; }
 
+
 /*===== Popup à propos de nous =====*/
 
 .popup-overlay {
@@ -217,83 +218,38 @@ p {
 
 
 /* === HEADER AVEC SÉPARATION OBLIQUE === */
-.header-wrapper {
-  z-index: auto;
-  display: flex;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.header-left, .header-right {
-  width: 50%;
-  height: 90%;
-  position: relative;
-}
 
 .header-left {
-  background: url('/images/image 3.jpg') center/cover no-repeat;
-  clip-path: polygon(0 0, 94% 0, 100% 100%, 0% 100%);
-}
-
-.header-right {
-  background-color: #f3f3f3;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom right, #1e3a8a, transparent);
-}
-
-.logo {
-  width: 120px;         /* ← adapte cette valeur selon ta maquette */
-  height: auto;
-  max-height: 100px;     /* ← limite la hauteur si besoin */
-  object-fit: contain;
-  display: block;
-  margin-bottom: 1rem;  /* espacement sous le logo */
-
-}
-
-.content {
-  position: relative;
-  z-index: 1;
-  padding: 3rem;
-  color: white;
-}
-
-.custom-slider {
   position: relative;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
+  bottom: 4rem;
 }
 
-.custom-slider .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+.highlight-banner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f9f9f9;
 }
 
-.custom-slider .slide.active {
-  opacity: 1;
-  z-index: 1;
+.highlight-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    object-fit: cover;
 }
+
 
 
 .header-buttons {
   position: absolute;
-  bottom: 2rem;
-  left: 50%;
+  bottom: 3rem;
+  left: 49%;
   transform: translateX(-50%);
   display: flex;
   gap: 1rem;
@@ -656,6 +612,11 @@ p {
     font-size: 1.2rem;
   }
 
+     .highlight-banner img {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
   .pillar-number {
     width: 40px;
     height: 40px;
@@ -670,6 +631,7 @@ p {
   /* Empêche les flex de passer en colonne */
   .header-wrapper,
   .team-newsletter-section,
+  .header-buttons,
   .pillars-grid,
   .approach-section,
   .footer-logos {
