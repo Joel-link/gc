@@ -42,13 +42,12 @@ public function store(Request $request)
                 ->subject('Nouvelle inscription client');
     });
 
-    // Envoi par WhatsApp via API (exemple générique)
-    Http::post('https://api.whatsapp.com/send', [
-        'phone' => 'TON_NUMERO',
-        'message' => "Nouvelle inscription client :\nNom : {$validated['name']}\nPrénoms : {$validated['prenoms']}\nEmail : {$validated['email']}\nTéléphone : {$validated['telephone']}\nAdresse : {$validated['adresse']}\nProfession : {$validated['profession']}"
-    ]);
+    $client = Client::create($request->all());
 
-    return back()->with('success', 'Informations envoyées avec succès !');
+    // Envoi de l'email
+    Mail::to('contact@genie-consultant.ga')->send(new InscriptionClient($client));
+
+    return redirect()->route('client.home')->with('success', 'Inscription réussie !');
 }
 
 

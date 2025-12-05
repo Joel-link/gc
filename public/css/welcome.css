@@ -219,41 +219,65 @@ p {
 
 /* === HEADER AVEC SÉPARATION OBLIQUE === */
 
-.header-left {
+/* === Structure générale du header === */
+.header-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh;
-  bottom: 4rem;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
-.highlight-banner {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: #f9f9f9;
+/* === Image de bannière === */
+
+.highlight-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.highlight-banner img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.2);
-    object-fit: cover;
-}
-
-
-
-.header-buttons {
+.highlight-slider .slide {
   position: absolute;
-  bottom: 3rem;
-  left: 49%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  width: 100%;          /* prend toute la largeur */
+  height: 100%;         /* occupe la hauteur du conteneur */
+  object-fit: cover;    /* garde les proportions et remplit l’écran */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.highlight-slider .slide.active {
+  opacity: 1;
+}
+
+
+
+
+
+/* === Boutons === */
+.header-buttons {
+  margin-top: 1.5rem;
   display: flex;
-  gap: 1rem;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  background-color: #e3342f;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #cc1f1a;
 }
 
 /* === APPROCHE === */
@@ -498,16 +522,6 @@ p {
 }
 
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
 .modal-box h2 {
   font-size: 1.6rem;
@@ -576,91 +590,5 @@ p {
 
 /* Responsive */
 
-@media screen and (max-width: 1024px) {
-  /* Réduction des paddings et tailles sans casser la structure */
-  .content {
-    padding: 2rem;
-  }
 
-  .logo {
-    width: clamp(80px, 10vw, 120px);
-    max-height: 80px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  p, .btn, .modal-box input, .modal-box .btn {
-    font-size: 1rem;
-  }
-
-  .btn {
-    padding: 0.5rem 1rem;
-  }
-
-  .modal-box {
-    padding: 1.5rem;
-    max-width: 90%;
-  }
-
-  .modal-box h2 {
-    font-size: 1.4rem;
-  }
-
-  .close-btn {
-    font-size: 1.2rem;
-  }
-
-     .highlight-banner img {
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .pillar-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .footer-title {
-    font-size: 1rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  /* Empêche les flex de passer en colonne */
-  .header-wrapper,
-  .team-newsletter-section,
-  .header-buttons,
-  .pillars-grid,
-  .approach-section,
-  .footer-logos {
-    flex-direction: row !important;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .team-column,
-  .approach-image-wrapper,
-  .approach-text {
-    flex: 1 1 45%;
-    max-width: 100%;
-  }
-
-  .pillar-box {
-    flex: 1 1 150px;
-    max-width: 150px;
-    max-height: 300px;
-  }
-
-  .header-buttons {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
 /* === FIN CSS === */

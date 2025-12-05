@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <title>Génie Consultant</title>
     <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
-    <link rel="icon" href="{{ asset('images/logo icon.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('images/icon genie consultant.jpg') }}" type="image/png">
 
 </head>
 
-<!-- Swiper JS -->
-<script src="{{ asset('js/slider.js') }}"></script>
-<script src="{{ asset('js/modals.js') }}"></script>
 
-<!-- Popup Services Slider -->
+
+<body>
+  <!-- Popup Services Slider -->
 <div id="servicesPopup" class="popup-overlay" style="display: none;">
   <div class="popup-content slider-layout">
     <span class="close-btn" onclick="closeServicesPopup()">×</span>
@@ -65,28 +64,26 @@
   </div>
 </div>
 
-
-
-<body>
-
 <!-- 🔹 Partie 1 : Header -->
 <section class="header-wrapper">
-    <div class="header-left">
-        <div class="overlay"></div>
-        <div class="highlight-banner">
-          <img src="{{ asset('images/banner_gc.jpg') }}" alt="Maître Gilles Lepebe - Génie Consultant">
-        </div>
-    </div>
 
+    <div class="header-left">
+       <div class="highlight-slider"> 
+        <img src="{{ asset('images/banner_gc.jpg') }}" alt="Image 1" class="slide active"> 
+        <img src="{{ asset('images/banner_gc_2.jpg') }}" alt="Image 2" class="slide"> 
+      </div> 
+     </div>
+    
+    
     <div class="header-buttons">
         <a href="#apropos" class="btn" onclick="openAboutPopup()">À propos de nous</a>
         <a href="#services" class="btn" onclick="openServicesPopup()">Nos services</a>
         <a href="#" class="btn" id="openClientForm">Devenir client</a>
         <a href="#" class="btn" id="openChatOptions">Discuter</a>
     </div>
+    @include('components.client-form')
+    @include('components.discuter')
 </section>
-@include('components.client-form')
-@include('components.discuter')
 
 
 <!-- 🔹 Partie 2 : Notre approche -->
@@ -140,9 +137,9 @@
 
   <div class="social-icons">
     <a href="https://www.facebook.com/GenieConsultant.GC?locale=fr_FR"><img src="{{ asset('images/icons/facebook.png') }}" alt="Facebook"></a>
-    <a href="#"><img src="{{ asset('images/icons/linkedin 1.png') }}" alt="LinkedIn"></a>
+    <a href="https://www.linkedin.com/company/g%C3%A9nie-consultant/"><img src="{{ asset('images/icons/linkedin 1.png') }}" alt="LinkedIn"></a>
     <a href="https://vm.tiktok.com/ZMAG4qGa3/"><img src="{{ asset('images/icons/black.png') }}" alt="Tiktok"></a>
-    <a href="https://www.youtube.com/watch?v=10iu9DWBzoQ">
+    <a href=https://www.youtube.com/@GenieConsultantGabon>
       <img src="{{ asset('images/icons/youtube logo.jpg') }}" alt="YouTube">
     </a>
   </div>
@@ -193,8 +190,9 @@
     </div>
 </footer>
 
-<!-- JS Slider -->
-
+<!-- Swiper JS -->
+<script src="{{ asset('js/slider.js') }}"></script>
+<script src="{{ asset('js/modals.js') }}"></script>
 
 </body>
 </html>
